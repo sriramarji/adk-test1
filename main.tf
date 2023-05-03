@@ -134,7 +134,7 @@ resource "azurerm_windows_virtual_machine" "vmach" {
   resource_group_name   = azurerm_resource_group.RG.name
   location              = azurerm_resource_group.RG.location
   size                  =  "${var.vmachine_size}"
-  computer_name        =  "Win123"
+  #computer_name        =  "Win123"
   admin_username        = "${var.username}"
   admin_password        = "${var.password}"
   network_interface_ids = [azurerm_network_interface.netint.id]
