@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: git://github.com/sriramarji/adk-test1.git
+  fetchDepth: 1
+  ref: testbranch
+- script: |
+    terraform init
+  displayName: 'Terraform init check'
+- script: |
+    terraform plan -var-file="myvars.tfvars"
+  displayName: 'Terraform plan check'
+- script: |
+    terraform apply -auto-approve -var-file="myvars.tfvars"
+  displayName: 'Terraform apply check'
