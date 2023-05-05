@@ -7,7 +7,7 @@ pool:
 steps:
 - checkout: git://github.com/sriramarji/adk-test1.git
   fetchDepth: 1
-  ref: testbranch
+ # ref: testbranch
 - script: |
     terraform init
   displayName: 'Terraform init check'
